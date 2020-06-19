@@ -1,0 +1,30 @@
+<html xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'rooms')}">
+
+<body>
+
+  <h2>New Room</h2>
+  <form th:object="${room}" class="form-horizontal" id="create-room" method="post">
+    <div class="form-group has-feedback">
+      <input
+        th:replace="~{fragments/inputField :: input ('Student Name', 'name', 'text')}" />
+      <input
+        th:replace="~{fragments/inputField :: input ('No Matrik', 'matrik', 'text')}" />
+      <input
+        th:replace="~{fragments/inputField :: input ('Email', 'email', 'text')}" />
+      <input
+        th:replace="~{fragments/inputField :: input ('Block', 'block', 'text')}" />
+      <input
+        th:replace="~{fragments/inputField :: input ('Room Number', 'roomno', 'text')}" />
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button
+          th:with="text=${room['new']} ? 'Add Room' : 'Update Room Details'"
+          class="btn btn-default" type="submit" th:text="${text}">Add
+          Room</button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>

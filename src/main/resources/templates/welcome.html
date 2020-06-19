@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'welcome')}">
+
+<!--th:replace="~{fragments/layout :: layout (~{::body},'home')}"-->
+
+
+<!--
+<head>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+  </link>
+  <link th:href="@{/css/heroic-features.css}" rel="stylesheet" type="text/css">
+  </link>
+  <link th:href="@{/css/font-awesome.css}" rel="stylesheet" type="text/css">
+  </link>
+</head>
+
+-->
+
+  <body>
+
+    <h2 th:text="#{welcome}">Welcome</h2>
+    <h2>UTM Hostel Registration System</h2>
+    <div class="row">
+
+      <ul>
+
+        <li th:replace="::menuItem ('/','home','home page','home','Home')">
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+          <span>Home</span>
+        </li>
+
+       
+        <li th:replace="::menuItem ('/rooms/new','rooms','create rooms','new','Room registration')">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          <span>Room registration</span>
+        </li>
+
+     
+        <li th:replace="::menuItem ('/rooms','rooms','rooms list','list','View room list')">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          <span>View room list</span>
+        </li>
+
+
+      </ul>
+
+
+
+
+        
+    </div>
+
+  </body>
+
+</html>

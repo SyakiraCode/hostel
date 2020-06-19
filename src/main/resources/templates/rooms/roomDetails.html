@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+
+<!-- th:replace="~{fragments/layout :: layout (~{::body},'rooms')}-->
+
+  <body>
+  
+  
+    <h2>Room Information</h2>
+  
+  
+    <table class="table table-striped" th:object="${room}">
+      <tr>
+        <th>Student Name</th>
+        <td><b th:text="${room.name}"></b></td>
+      </tr>
+      <tr>
+        <th>No Matrik</th>
+        <td><b th:text="${room.matrik}"></b></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td th:text="${room.email}"></td>
+      </tr>
+      <tr>
+        <th>Block</th>
+        <td th:text="${room.block}"></td>
+      </tr>
+      <tr>
+        <th>Room Number </th>
+        <td th:text="${room.roomno}"></td>
+      </tr>
+    </table>
+  
+    <a th:href="@{{id}/edit(id=${room.id})}" class="btn btn-default">Edit Room Details</a>
+   <a th:href="@{{id}/delete(id=${room.id})}" class="btn btn-default">Delete</a>
+   <a th:href="@{/rooms}" class="btn btn-default">View Room List</a>
+
+  
+    <br />
+    <br />
+    <br />
+
+
+ 
+  </body>
+
+</html>
